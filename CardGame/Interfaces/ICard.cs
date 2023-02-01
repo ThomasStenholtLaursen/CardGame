@@ -2,6 +2,8 @@
 {
     public interface ICard
     {
-        double CalculateCardValue(int cardValue);
+        int CalculateCardValue();   
+        string? GetCardType();
+        string GetCardNumber();
     }
 }
