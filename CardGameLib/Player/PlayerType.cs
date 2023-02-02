@@ -1,4 +1,4 @@
-﻿namespace CardGame.Player;
+﻿namespace CardGameLib.Player;
 
 public enum PlayerType
 {      

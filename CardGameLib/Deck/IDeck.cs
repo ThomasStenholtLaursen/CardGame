@@ -1,4 +1,6 @@
-﻿namespace CardGame.Interfaces
+﻿using CardGameLib.Player;
+
+namespace CardGameLib.Deck
 {
     public interface IDeck
     {

@@ -1,29 +1,29 @@
-﻿using CardGame.Interfaces;
+﻿using CardGameLib.Card;
 
-namespace CardGame.Player;
+namespace CardGameLib.Player;
 
 public class Player : IPlayer
 {
-    private readonly string _name;
+    private readonly string _playerName;
     private readonly PlayerType _playerType;
     public List<ICard> Cards { get; }
 
-    public Player(string name, List<ICard> cards, PlayerType playerType)
+    public Player(string playerName, List<ICard> cards, PlayerType playerType)
     {
-        _name = name;
+        _playerName = playerName;
         _playerType = playerType;
         Cards = cards;
     }
 
     public string GetPlayerName()
     {
-        return _name;
+        return _playerName;
     }
 
     public void ShowTotalHandValue()
     {
         var sum = GetTotalHandValue();
-        Console.WriteLine($"{_name}: {sum}");
+        Console.WriteLine($"{_playerName}: {sum}");
     }
     public int GetTotalHandValue()
     {
@@ -32,7 +32,7 @@ public class Player : IPlayer
 
     public void ShowHand()
     {
-        Console.WriteLine($"{_name}:");
+        Console.WriteLine($"{_playerName}:");
         foreach (var card in Cards)
         {
             Console.WriteLine($"{card.GetCardType()}({card.GetCardNumber()})");

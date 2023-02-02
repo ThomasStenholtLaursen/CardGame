@@ -1,15 +1,15 @@
-﻿using CardGame.Card;
-using CardGame.Interfaces;
+﻿using CardGameLib.Deck;
+using CardGameLib.Player;
 
-namespace CardGame.Game
+namespace CardGameLib.Game
 {
-    public class Game : IGame
+    public class GameController : IGameController
     {
         private readonly List<IPlayer> _players;
         private readonly IDeck _deck;
         private readonly GameType _gameType;
 
-        public Game(List<IPlayer> players, IDeck deck, GameType gameType)
+        public GameController(List<IPlayer> players, IDeck deck, GameType gameType)
         {
             _players = players;
             _deck = deck;
@@ -31,7 +31,7 @@ namespace CardGame.Game
                     var max = handValues.Max();
                     var winner = _players.FirstOrDefault(x => x.GetTotalHandValue() >= max);
 
-                    Console.WriteLine($"(Maximum Game Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
+                    Console.WriteLine($"(Maximum GameController Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
                     break;
                 }
                 case GameType.Min:
@@ -40,11 +40,11 @@ namespace CardGame.Game
                     var min = handValues.Min();
                     var winner = _players.FirstOrDefault(x => x.GetTotalHandValue() <= min);
 
-                    Console.WriteLine($"(Minimum Game Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
+                    Console.WriteLine($"(Minimum GameController Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
                     break;
                 }
                 default:
-                    throw new ArgumentOutOfRangeException($"Invalid Game Type");
+                    throw new ArgumentOutOfRangeException($"Invalid GameController Type");
             }
         }
     }

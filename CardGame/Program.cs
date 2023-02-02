@@ -1,8 +1,7 @@
-﻿using CardGame.Card;
-using CardGame.Deck;
-using CardGame.Game;
-using CardGame.Interfaces;
-using CardGame.Player;
+﻿using CardGameLib.Card;
+using CardGameLib.Deck;
+using CardGameLib.Game;
+using CardGameLib.Player;
 
 var deck = new Deck();
 
@@ -17,6 +16,9 @@ var player3Name = Console.ReadLine();
 Console.Clear();
 Console.Write("Please enter the name of Player 4 (Weak Player): ");
 var player4Name = Console.ReadLine();
+Console.Clear();
+Console.Write("Please enter the amount of cards to deal to each player: ");
+var cardsToDeal = Convert.ToInt32(Console.ReadLine());
 Console.Clear();
 
 var player1 = new Player(player1Name!, new List<ICard>(), PlayerType.NormalPlayer);
@@ -33,8 +35,8 @@ var listOfPlayers = new List<IPlayer>
     player4
 };
 
-var game = new Game(listOfPlayers, deck, GameType.Min);
-game.CommandDealCards(10);
+var game = new GameController(listOfPlayers, deck, GameType.Min);
+game.CommandDealCards(cardsToDeal);
 
 player1.ShowHand();
 Console.WriteLine();

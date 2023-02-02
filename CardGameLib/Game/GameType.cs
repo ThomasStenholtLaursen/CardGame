@@ -1,4 +1,4 @@
-﻿namespace CardGame.Game;
+﻿namespace CardGameLib.Game;
 
 public enum GameType
 {

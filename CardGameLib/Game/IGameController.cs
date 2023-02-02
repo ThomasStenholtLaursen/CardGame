@@ -1,6 +1,6 @@
-﻿namespace CardGame.Interfaces
+﻿namespace CardGameLib.Game
 {
-    public interface IGame
+    public interface IGameController
     {
         void CommandDealCards(int numberOfCardsToDeal);
         void AnnonceWinner();

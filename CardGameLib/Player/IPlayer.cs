@@ -1,4 +1,6 @@
-﻿namespace CardGame.Interfaces
+﻿using CardGameLib.Card;
+
+namespace CardGameLib.Player
 {
     public interface IPlayer
     {

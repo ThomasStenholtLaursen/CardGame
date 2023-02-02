@@ -1,6 +1,4 @@
-﻿using CardGame.Interfaces;
-
-namespace CardGame.Card;
+﻿namespace CardGameLib.Card;
 
 public class Card : ICard
 {
@@ -23,8 +21,8 @@ public class Card : ICard
         return Convert.ToString(_cardType);
     }
 
-    public string GetCardNumber()
+    public int GetCardNumber()
     {
-        return Convert.ToString(_cardNumber);
+        return _cardNumber;
     }
 }

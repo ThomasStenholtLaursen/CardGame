@@ -1,7 +1,7 @@
-﻿using CardGame.Card;
-using CardGame.Interfaces;
+﻿using CardGameLib.Card;
+using CardGameLib.Player;
 
-namespace CardGame.Deck;
+namespace CardGameLib.Deck;
 
 public class Deck : IDeck
 {
@@ -40,7 +40,6 @@ public class Deck : IDeck
 
     private int RandomCardType()
     {
-        return _rand.Next(1, Enum.GetValuesAsUnderlyingType<CardType>().Length + 1);  // creates a number between 1 and number of card types
+        return _rand.Next(1, Enum.GetValues<CardType>().Length + 1);  // creates a number between 1 and number of Card types
     }
-
 }
