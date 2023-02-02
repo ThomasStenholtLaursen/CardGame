@@ -27,8 +27,7 @@ namespace CardGameLib.Game
             {
                 case GameType.Max:
                 {
-                    var handValues = _players.Select(player => player.GetTotalHandValue()).ToList();
-                    var max = handValues.Max();
+                    var max = _players.Select(player => player.GetTotalHandValue()).ToList().Max();
                     var winner = _players.FirstOrDefault(x => x.GetTotalHandValue() >= max);
 
                     Console.WriteLine($"(Maximum GameController Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
@@ -36,8 +35,7 @@ namespace CardGameLib.Game
                 }
                 case GameType.Min:
                 {
-                    var handValues = _players.Select(player => player.GetTotalHandValue()).ToList();
-                    var min = handValues.Min();
+                    var min = _players.Select(player => player.GetTotalHandValue()).ToList().Min();
                     var winner = _players.FirstOrDefault(x => x.GetTotalHandValue() <= min);
 
                     Console.WriteLine($"(Minimum GameController Variant) The winner is {winner!.GetPlayerName()} with a total of {winner!.GetTotalHandValue()} on hand");
